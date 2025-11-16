@@ -1,0 +1,222 @@
+:root {
+    --color-orange: #FF9800;
+    --color-yellow: #FFEB3B;
+    --color-red: #F44336;
+    --color-bg-light: #ECEFF1;
+    --color-primary: #673AB7; /* ม่วง */
+    --color-accent: #FF4081; /* ชมพู */
+    --slot-size: 80px;
+}
+
+/* พื้นฐาน & การรองรับมือถือ */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--color-bg-light);
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: 450px; /* จำกัดความกว้างบนเดสก์ท็อป */
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+/* ส่วนหัวและยอดเงิน */
+.header {
+    margin-bottom: 20px;
+}
+
+.game-title {
+    color: var(--color-primary);
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.balance-display {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.balance-amount {
+    font-size: 1.5em;
+    margin: 0 10px;
+    color: var(--color-yellow);
+}
+
+.game-message {
+    height: 1.5em;
+    line-height: 1.5em;
+    margin-top: 10px;
+    font-weight: bold;
+    color: var(--color-red);
+}
+
+/* ควบคุมเงินเดิมพัน */
+.bet-control h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.bet-input-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.bet-button {
+    width: 50px;
+    height: 50px;
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.plus-button { background-color: #4CAF50; } /* เขียว */
+.minus-button { background-color: #FF5722; } /* ส้มเข้ม */
+
+.bet-button:active {
+    box-shadow: none;
+    transform: translateY(2px);
+}
+
+.bet-button:disabled {
+    background-color: #BDBDBD;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.bet-amount {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: var(--color-accent);
+    margin: 0 15px;
+    width: 80px;
+}
+
+.bet-info {
+    font-size: 0.8em;
+    color: #777;
+}
+
+/* ปุ่มหมุน */
+.spin-button {
+    width: 90%;
+    padding: 15px 0;
+    margin: 20px auto;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: white;
+    background-color: var(--color-accent);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0 6px 0 #C2185B; /* เงาชมพูเข้ม */
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.spin-button:active {
+    box-shadow: none;
+    transform: translateY(4px);
+}
+
+.spin-button:disabled {
+    background-color: #9E9E9E;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+/* กรอบสล็อต */
+.slot-grid-container {
+    padding: 10px;
+    background-color: #333; /* พื้นหลังสีเข้มเพื่อเน้นสีสล็อต */
+    border-radius: 15px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.slot-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.slot-cell {
+    width: var(--slot-size);
+    height: var(--slot-size);
+    border: 4px solid #fff;
+    border-radius: 10px;
+    transition: background-color 0.1s ease-in-out;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+    /* สีเริ่มต้น: ส้ม */
+    background-color: var(--color-orange); 
+}
+
+/* แอนิเมชันการหมุน */
+.spinning {
+    /* ใช้ CSS Animation เพื่อจำลองการหมุนเร็วๆ */
+    animation: quick-spin 0.1s infinite alternate;
+}
+
+@keyframes quick-spin {
+    0% { background-color: var(--color-orange); }
+    33% { background-color: var(--color-yellow); }
+    66% { background-color: var(--color-red); }
+    100% { background-color: var(--color-yellow); }
+}
+
+.highlight-win {
+    border: 4px solid gold !important;
+    box-shadow: 0 0 15px gold;
+}
+
+/* ตารางตัวคูณ */
+.paytable {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px dashed #CCC;
+}
+
+.paytable table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.paytable td {
+    padding: 8px;
+    border: 1px solid #EEE;
+}
+
+.pay-color {
+    font-weight: bold;
+}
+
+.orange-bg { background-color: var(--color-orange); }
+.yellow-bg { background-color: var(--color-yellow); }
+.red-bg { background-color: var(--color-red); }
+

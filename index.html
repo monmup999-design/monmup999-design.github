@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌈 Slot สีเสี่ยงโชค</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <h1 class="game-title">✨ Slot สีเสี่ยงโชค ✨</h1>
+            <div class="balance-display">
+                <span class="label">เงินปัจจุบัน:</span>
+                <span id="current-balance" class="balance-amount">100</span>
+                <span class="unit">หน่วย</span>
+            </div>
+            <div id="game-message" class="game-message"></div>
+        </header>
+        
+        <section class="bet-control">
+            <h2>เงินที่จะใช้หมุน</h2>
+            <div class="bet-input-group">
+                <button id="decrease-bet" class="bet-button minus-button" disabled>–</button>
+                <span id="current-bet" class="bet-amount">10</span>
+                <button id="increase-bet" class="bet-button plus-button">+</button>
+            </div>
+            <p class="bet-info">ขั้นต่ำ 10 | เพิ่ม/ลด ทีละ 10</p>
+        </section>
+
+        <div class="spin-area">
+            <button id="spin-button" class="spin-button">🎰 หมุน! 🎰</button>
+        </div>
+
+        <section class="slot-grid-container">
+            <div id="slot-grid" class="slot-grid">
+                <div class="slot-cell" data-index="0"></div>
+                <div class="slot-cell" data-index="1"></div>
+                <div class="slot-cell" data-index="2"></div>
+                <div class="slot-cell" data-index="3"></div>
+                <div class="slot-cell" data-index="4"></div>
+                <div class="slot-cell" data-index="5"></div>
+                <div class="slot-cell" data-index="6"></div>
+                <div class="slot-cell" data-index="7"></div>
+                <div class="slot-cell" data-index="8"></div>
+            </div>
+        </section>
+
+        <section class="paytable">
+            <h3>อัตราการจ่ายเงิน (x เงินที่ใช้หมุน)</h3>
+            <table>
+                <tr>
+                    <td class="pay-color orange-bg">ส้ม 🍊</td>
+                    <td>x1</td>
+                </tr>
+                <tr>
+                    <td class="pay-color yellow-bg">เหลือง 🟡</td>
+                    <td>x2</td>
+                </tr>
+                <tr>
+                    <td class="pay-color red-bg">แดง 🔴</td>
+                    <td>x3</td>
+                </tr>
+            </table>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+ 
